@@ -8,9 +8,11 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "check": "node --check src/server.js && node --check src/routes/shipping.js && node --check src/services/shiprocket.js && node --check src/services/rateCalculator.js && node --check scripts/register-carrier.js && node --check scripts/list-carriers.js",
+    "check": "node --check src/server.js && node --check src/routes/shipping.js && node --check src/services/shiprocket.js && node --check src/services/rateCalculator.js && node --check scripts/register-carrier.js && node --check scripts/list-carriers.js && node --check src/services/shopify-admin.js && node --check scripts/sync-carrier.js",
     "shopify:register-carrier": "node scripts/register-carrier.js",
-    "shopify:list-carriers": "node scripts/list-carriers.js"
+    "shopify:list-carriers": "node scripts/list-carriers.js",
+    "shopify:sync-carrier": "node scripts/sync-carrier.js",
+    "shopify:token-check": "node -e \"require('./src/services/shopify-admin').getToken().then(()=>console.log('Token acquired; auto-refresh enabled')).catch(e=>{console.error(e.message);process.exitCode=1})\""
   },
   "engines": {
     "node": ">=20"

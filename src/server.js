@@ -47,6 +47,11 @@ app.use((error, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
+// Optional one-time carrier reconciliation after startup. Tokens are refreshed on each API use.
+if (process.env.SHOPIFY_AUTO_SYNC_CARRIER === 'true') {
+  require('../scripts/sync-carrier').syncCarrier().catch(error => logError('Carrier auto-sync failed', error));
+}
+
 const server = app.listen(env.port, '0.0.0.0', () => {
   logInfo('Server started', { port: env.port, nodeEnv: env.nodeEnv });
 });
