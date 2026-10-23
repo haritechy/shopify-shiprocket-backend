@@ -1,0 +1,24 @@
+{
+  "name": "shopify-shiprocket-dynamic-shipping",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js backend for Shopify CarrierService + Shiprocket dynamic shipping rates",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check": "node --check src/server.js && node --check src/routes/shipping.js && node --check src/services/shiprocket.js && node --check src/services/rateCalculator.js && node --check scripts/register-carrier.js && node --check scripts/list-carriers.js",
+    "shopify:register-carrier": "node scripts/register-carrier.js",
+    "shopify:list-carriers": "node scripts/list-carriers.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0"
+  }
+}

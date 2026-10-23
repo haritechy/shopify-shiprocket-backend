@@ -1,0 +1,33 @@
+{
+  "rate": {
+    "origin": {
+      "country": "IN",
+      "postal_code": "641001",
+      "province": "TN",
+      "city": "Coimbatore"
+    },
+    "destination": {
+      "country": "IN",
+      "postal_code": "600001",
+      "province": "TN",
+      "city": "Chennai"
+    },
+    "items": [
+      {
+        "name": "Sample T-Shirt",
+        "sku": "TSHIRT-001",
+        "quantity": 2,
+        "grams": 300,
+        "price": 74900,
+        "requires_shipping": true
+      }
+    ],
+    "currency": "INR",
+    "locale": "en",
+    "order_totals": {
+      "subtotal_price": "149800",
+      "total_price": "149800",
+      "discount_amount": "0"
+    }
+  }
+}
